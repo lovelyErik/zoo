@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+</head>
+<body>
+<a-scene>
+    <a-entity position="0 8 15">
+        <a-camera></a-camera>
+    </a-entity> 
+    <a-assets timeout="10000"> 
+<img src="nature-colorful-landscape-dusk-cloud.jpg" id="sky">
+<a-asset-item src="model/maple_tree/scene.gltf" id="maple_tree"></a-asset-item>
+</a-assets>
+
+<a-sky src="#sky"></a-sky>
+
+<a-entity>
+ <a-entity gltf-model="#maple_tree" scale="0.05 0.05 0.05" position="0 0 -10"></a-entity>
+</a-entity>
+
+
+<a-entity light="type:ambient;intensity=0.5">    
+</a-entity>
+
+<a-entity animation="property:rotation;to:0 360 0;easing:linear;loop:true;dur:60000">
+<a-entity light="type:directional;castShadow:true;intensity:1;distance:50
+    ;decay:2;color:yellow;position:-100 18 20"></a-entity>
+</a-entity>
+<a-circle position="-0.4 -0.76 -25" rotation="-90 0 0" radius="100" shadow="receive:true" 
+visible="true" color="#2e6f10">
+
+</a-circle>
+</a-scene>
+</body>
+</html>
